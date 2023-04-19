@@ -1,0 +1,115 @@
+/* Specific page styles */
+.homepage-slider {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.homepage-slider aside {
+    position: absolute;
+    text-align: left;
+    left: 10%;
+    bottom: 20%;
+    color: white;
+}
+
+.homepage-slider small {
+    color: #b40800;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin:0;
+}
+
+.homepage-slider h1 {
+    font-weight: normal;
+    margin:0 0 1em 0;
+}
+
+.homepage-slider .linkbutton {
+    background-color:  rgba(120, 120, 120, 0.8);
+}
+.homepage-slider .linkbutton:hover {
+    background-color:  rgba(120, 120, 120, 1);
+}
+
+#weiter {
+    position: absolute;
+    bottom: 1em;
+    left: 45%;
+}
+
+/* General Style settings for this site */
+body {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    text-align: center;
+}
+
+section {
+    display: inline-block;
+    max-width: 50em;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 2em;
+}
+
+.linkbutton {
+    color: white;
+    display: inline-block;
+    width: auto;
+    background-color: rgba(85, 85, 85, 1);
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+}
+.linkbutton:hover {
+    background-color: rgba(85, 85, 85, 1);
+}
+.linkbutton:visited {
+    color: white;
+}
+
+
+
+/* CSS for sliders, inspired by https://www.youtube.com/watch?v=o5U5LfIZpAw */
+.slider {
+    overflow: hidden;
+}
+
+.slider ul {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    position: relative;
+    list-style-type: none;
+}
+
+.slider li {
+    position: relative;
+    height: 100%;
+    float: left;
+    background-size: cover;
+}
+
+/* Slider mit 3 Inhalten */
+.slider-3 ul {
+    width: 300%;
+    animation: slider 20s infinite;
+}
+
+.slider-3 li {
+    width: 33.3%;
+}
+
+@keyframes slider {
+    0% { left: 0%; }
+    28% { left: 0%; }
+    33.3% { left: -100%; }
+    61.3% { left: -100%; }
+    66.6% { left: -200%; }
+    94.6% { left: -200%; }
+    100% { left: 0%; }
+}
