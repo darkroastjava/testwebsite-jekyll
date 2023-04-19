@@ -43,5 +43,13 @@
             <p>Text.</p>
             <a class="linkbutton" href="https://g3basel.ch/ueber-uns/">mehr</a>
         </section>
+        
+        <ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
     </body>
 </html>
