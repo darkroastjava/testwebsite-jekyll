@@ -1,6 +1,6 @@
 ---
 title: My First Page
-layout: default
+layout: start
 ---
 
 <div class="homepage-slider slider slider-3">
