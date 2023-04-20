@@ -12,7 +12,7 @@ This is the content of my page
   {% assign now_in_24h_unix = nowunix | plus: 86400 %}
   {% for post in site.posts reversed %}
     <li>
-      {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+      {% capture posttime %}{{post.date | date: '%s' | plus: 0}}{% endcapture %}
       {% if posttime >= now_in_24h_unix %}
         <a href="{{ post.url }}">{{ post.date}} - {{ post.title }}</a>
       {% endif %}
