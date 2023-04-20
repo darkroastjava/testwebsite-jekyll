@@ -11,11 +11,12 @@ This is the content of my page
   {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
   {% assign now_in_24h_unix = nowunix | plus: 86400 %}
   {% for post in site.posts reversed %}
-    <li>
-      {% capture posttime %}{{post.date | date: '%s' | plus: 0}}{% endcapture %}
-      {% if posttime >= now_in_24h_unix %}
-        <a href="{{ post.url }}">{{ post.date}} - {{ post.title }}</a>
-      {% endif %}
-    </li>
+    {% capture posttime %}{{post.date | date: '%s' }}{% endcapture %}
+    {% assign posttime_unix = posttime | plus: 0 %}
+    {% if posttime_unix >= now_in_24h_unix %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>
