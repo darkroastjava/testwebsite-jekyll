@@ -1,15 +1,7 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
-  </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog/">Blog</a>
-    </nav>
+---
+title: My First Page
+layout: default
+---
 
 <div class="homepage-slider slider slider-3">
 <ul>
@@ -35,28 +27,7 @@
 </ul>
 <a id="weiter" class="linkbutton" href="#angebote">&#x2B07;</a>
 </div>
-  
+
         <a name="angebote" id="angebote"></a>
-        <section>
-            <h1>Titel</h1>
-            <p>Text.</p>
-            <p>More Text.</p>
-        </section>
-
 {% include_relative abschnitt1.md %}
-
-        <a name="about" id="about"></a>
-        <section>
-            <h1>Titel</h1>
-            <p>Text.</p>
-            <a class="linkbutton" href="https://g3basel.ch/ueber-uns/">mehr</a>
-        </section>
-  
-    <footer>
-      &copy; to me
-    </footer>
-  </body>
-</html>
-
-
 
