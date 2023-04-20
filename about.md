@@ -12,7 +12,7 @@ This is the content of my page
   {% for post in site.posts reversed %}
     <li>
       {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
-      {% if posttime < nowunix %}
+      {% if posttime >= nowunix %}
         <a href="{{ post.url }}">{{ post.date}} - {{ post.title }}</a>
       {% endif %}
     </li>
