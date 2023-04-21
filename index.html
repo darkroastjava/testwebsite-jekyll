@@ -1,36 +1,41 @@
+---
+# this empty front matter is necessary for the liquid to be processed, see https://stackoverflow.com/a/29666241
+---
 <html>
     <head>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div class="homepage-slider slider slider-3">
-            <ul>
-                <li style="background-image: url('img/slider-1.jpg')">
-                    <aside>
-                        <small>demnächst</small>
-                        <h1>Event 19.4.23</h1>
-                        <a class="linkbutton" href="dates/event-19.4.23.html">mehr</a>
-                    </aside>
-                </li>
-                <li style="background-image: url('img/slider-2.jpg')">
-                    <aside>
-                        <small>demnächst</small>
-                        <h1>Other Event 1.5.23</h1>
-                        <a class="linkbutton" href="dates/event-1.5.23.html">mehr</a>
-                    </aside>
-                </li>
-                <li style="background-image: url('img/slider-3.jpg')">
-                    <aside>
-                        <small>demnächst</small>
-                        <h1>Yet another event 1.6.23</h1>
-                        <a class="linkbutton" href="dates/event-1.6.23.html">mehr</a>
-                    </aside>
-                </li>
-            </ul>
-            <a id="weiter" class="linkbutton" href="#angebote">&#x2B07;</a>
-        </div>
+
+        
+<div class="homepage-slider slider slider-3">
+<ul>
+  {% capture now_unix %}{{'now' | date: '%s'}}{% endcapture %}
+  {% assign now_in_24h_unix = now_unix | plus: 86400 %}
+  {% assign count = 0 %}
+  
+  {% for post in site.posts reversed %}
+  
+    {% capture posttime %}{{post.date | date: '%s' }}{% endcapture %}
+    {% assign posttime_unix = posttime | plus: 0 %}
+    {% if posttime_unix >= now_in_24h_unix and count < 3 %}
+      <li style="background-image: url('img/slider-1.jpg')">
+        <aside>
+          <small>demnächst</small>
+          <h1>{{ post.title }}</h1>
+          <a class="linkbutton" href="{{ post.url }}">mehr</a>
+        </aside>
+      </li>
+      {% assign count = count | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+</ul>
+<a id="weiter" class="linkbutton" href="#angebote">&#x2B07;</a>
+</div>
 
         <a name="angebote" id="angebote"></a>
+
+        
         <section>
             <h1>Titel</h1>
             <p>Text.</p>
