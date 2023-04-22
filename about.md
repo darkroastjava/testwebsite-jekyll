@@ -6,5 +6,5 @@ layout: start
 
 
 <a name="angebote"></a>
-{% include_relative abschnitt1.md %}
+{% include_relative abschnitt2.md %}
 
