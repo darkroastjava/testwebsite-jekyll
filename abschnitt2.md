@@ -1,8 +1,8 @@
----
-title: Titel
-layout: abschnitt
----
+<section>
+  
+# Titel
 
 Text.
 
 More Text.
+</section>
