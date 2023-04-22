@@ -4,6 +4,4 @@ layout: start
 ---
 {% include upcoming.html %}
 
-
-<a name="angebote"></a>
 {% include_relative abschnitt2.md %}
